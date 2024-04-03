@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome Page</title>
-    <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Add your custom styles here */
         body {
             background-color: #f8f9fa;
         }
@@ -38,7 +36,6 @@
                 <li class="list-group-item">Address: {Address}</li>
             </ul>
             <ul class="list-group" id="userDataList">
-                <!-- Data will be appended here -->
             </ul>
         </div>
         <button id="fetchDataBtn" class="btn btn-primary mt">Fetch Data</button>
@@ -55,10 +52,8 @@
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
-                    // Process retrieved data and append to the page
                     const userDataList = document.getElementById('userDataList');
-                    userDataList.innerHTML = ''; // Clear previous data
-
+                    userDataList.innerHTML = '';
                     data.forEach(item => {
                         const listItem = document.createElement('li');
                         listItem.classList.add('list-group-item');
