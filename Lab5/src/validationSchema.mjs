@@ -1,4 +1,4 @@
-export { userSchema, userSchemaUpdate }
+export { userSchema, userSchemaUpdate, itemSchema, orderSchema }
 
 
 
@@ -30,3 +30,28 @@ const userSchemaUpdate = {
 };
 
 
+
+const itemSchema = {
+    type: 'object',
+    properties: {
+        name: { type: 'string', minLength: 1 },
+        price: { type: 'number', minimum: 0 },
+        description: { type: 'string' }
+    },
+    required: ['name', 'price', 'description'],
+    additionalProperties: false
+};
+
+
+const orderSchema = {
+    type: 'object',
+    properties: {
+        totalPrice: { type: 'number' },
+        items: {
+            type: 'string',
+
+        }
+    },
+    required: ['totalPrice', 'items'],
+    additionalProperties: false
+};

@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+export { Item }
 const itemSchema = new mongoose.Schema({
     name: String,
     price: Number,

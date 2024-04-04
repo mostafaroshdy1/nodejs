@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
 
+export { Order }
 const orderSchema = new mongoose.Schema({
     totalPrice: Number,
     items: [{
-        type: ObjectId,
+        type: mongoose.Types.ObjectId,
         ref: 'Item'
     }]
 })

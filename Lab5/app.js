@@ -2,6 +2,10 @@ import express from 'express';
 import { connectToDB } from './src/utils/db.mjs'
 import { tryCatch } from './src/utils/tryCatch.mjs';
 import { router as userRoutes } from './src/Routes/UserRoutes.mjs'
+import { router as itemRoutes } from './src/Routes/ItemRouts.mjs'
+import { router as orderRoutes } from './src/Routes/OrderRoutes.mjs'
+import { ExpressError } from './src/utils/ExpressError.mjs';
+
 
 tryCatch(connectToDB);
 
@@ -12,7 +16,10 @@ app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 
-app.use('/api/users', userRoutes)
+app.use('/api/users', userRoutes);
+app.use('/api/items', itemRoutes);
+app.use('/api/orders', orderRoutes);
+
 
 
 //  Any Invalid routes
